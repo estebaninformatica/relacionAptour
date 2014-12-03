@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @table.name %>
+</p>
+
+<p>
+  <strong>Name aero:</strong>
+  <%= @table.name_aero %>
+</p>
+
+<p>
+  <strong>Name aptour:</strong>
+  <%= @table.name_aptour %>
+</p>
+
+<table class="table table-striped table-hover ">
+  <thead>
+    <tr>
+      <th>Model</th>
+      <th>Id aero</th>
+      <th>Id aptour</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @table.relations.each do |relation| %>
+      <tr>
+        <td><%= relation.table_id %></td>
+        <td><%= relation.id_aero %></td>
+        <td><%= relation.id_aptour %></td>
+        <td><%= link_to 'Show', relation %></td>
+        <td><%= link_to 'Edit', edit_relation_path(relation) %></td>
+        <td><%= link_to 'Destroy', relation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table> 
+
+<%= link_to 'Edit', edit_table_path(@table) %> |
+<%= link_to 'Back', tables_path %>

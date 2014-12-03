@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+<meta charset="utf-8">
+    <title>Theme Preview - Usebootstrap.com</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= content_tag :title, "RELACION" %>
+    <%= stylesheet_link_tag "application", 'data-turbolinks-track' => true %>
+
+    <%= javascript_include_tag "application" , 'data-turbolinks-track' => true%>
+    <%= csrf_meta_tags %>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="bootstrap/html5shiv.js"></script>
+      <script src="bootstrap/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="http://usebootstrap.com/" class="navbar-brand">Aptour Relacion</a>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+		  <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://usebootstrap.com/" target="_blank">Bootstrap Themes</a></li>
+		  </ul>
+		  
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+    	<div class="page-header" id="banner">
+        	<div class="row">
+          		<%= yield %>
+          		</div>
+        	</div>
+    </div>
+  </body>
+</html>
+    <script type="text/javascript">
+
+        (function(){
+
+  var $button = $("<div id='source-button' class='btn btn-primary btn-xs'>&lt; &gt;</div>").click(function(){
+    var html = $(this).parent().html();
+    html = cleanSource(html);
+    $("#source-modal pre").text(html);
+    $("#source-modal").modal();
+  });
+
+  $('.bs-component [data-toggle="popover"]').popover();
+  $('.bs-component [data-toggle="tooltip"]').tooltip();
+
+  $(".bs-component").hover(function(){
+    $(this).append($button);
+    $button.show();
+  }, function(){
+    $button.hide();
+  });
+
+  function cleanSource(html) {
+    var lines = html.split(/\n/);
+
+    lines.shift();
+    lines.splice(-1, 1);
+
+    var indentSize = lines[0].length - lines[0].trim().length,
+        re = new RegExp(" {" + indentSize + "}");
+
+    lines = lines.map(function(line){
+      if (line.match(re)) {
+        line = line.substring(indentSize);
+      }
+
+      return line;
+    });
+
+    lines = lines.join("\n");
+
+    return lines;
+  }
+
+})();
+
+    </script>

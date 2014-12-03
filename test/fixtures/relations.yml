@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  model: MyString
+  id_aero: 1
+  id_aptour: 1
+
+two:
+  model: MyString
+  id_aero: 1
+  id_aptour: 1
