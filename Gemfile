@@ -27,19 +27,31 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'meta_request'
+  gem 'quiet_assets'
 end
+gem 'font-awesome-rails'
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
+gem "select2-rails"
+
+gem 'json'
+gem 'json-schema'
+gem 'kaminari'
+gem 'carrierwave'
+#SQLServer
+gem 'tiny_tds'
+gem 'activerecord-sqlserver-adapter'
+gem 'therubyracer'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+#gem 'debugger', group: [:development, :test]
 

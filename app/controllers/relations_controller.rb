@@ -4,7 +4,7 @@ class RelationsController < ApplicationController
   # GET /relations
   # GET /relations.json
   def index
-    @relations = Relation.all
+    @relations = Relation.page(params[:page])
   end
 
   # GET /relations/1
